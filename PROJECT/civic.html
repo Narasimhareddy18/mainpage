@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Civic Issues Management</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(to right, #d4fc79, #96e6a1);
+        color: #333;
+    }
+
+    header {
+        background: #2e7d32;
+        color: #fff;
+        padding: 25px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 40px 20px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .feature-card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .feature-card h3 {
+        margin-top: 0;
+        color: #2e7d32;
+    }
+
+    .report-form {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .report-form h2 {
+        margin-top: 0;
+        text-align: center;
+        color: #2e7d32;
+    }
+
+    .report-form input,
+    .report-form select,
+    .report-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 12px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+    }
+
+    .report-form textarea {
+        resize: none;
+        height: 100px;
+    }
+
+    .report-form button {
+        width: 100%;
+        padding: 14px;
+        background: #2e7d32;
+        color: #fff;
+        border: none;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .report-form button:hover {
+        background: #1b5e20;
+    }
+
+    .status-section {
+        margin-top: 40px;
+    }
+
+    .status-section h2 {
+        text-align: center;
+        color: #2e7d32;
+    }
+
+    .status-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: #fff;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .status-table th,
+    .status-table td {
+        padding: 14px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .status-table th {
+        background: #2e7d32;
+        color: #fff;
+    }
+
+    .back-btn {
+        display: block;
+        text-align: center;
+        margin-top: 40px;
+        text-decoration: none;
+        font-size: 1rem;
+        color: #2e7d32;
+        font-weight: bold;
+    }
+
+    .back-btn:hover {
+        text-decoration: underline;
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Civic Issues Management</h1>
+    <p>Report, Track and Resolve Public Issues Efficiently</p>
+</header>
+
+<div class="container">
+
+    <!-- FEATURES -->
+    <div class="features">
+        <div class="feature-card">
+            <h3>🚧 Issue Reporting</h3>
+            <p>Citizens can report issues like potholes, garbage, water leakage, and streetlight failures.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📍 Location Based Tracking</h3>
+            <p>Issues are tracked based on area and ward for faster resolution.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>⏳ Status Monitoring</h3>
+            <p>Track issue status: Pending, In Progress, or Resolved.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🏛️ Authority Assignment</h3>
+            <p>Automatically forwards issues to the concerned municipal department.</p>
+        </div>
+    </div>
+
+    <!-- REPORT FORM -->
+    <div class="report-form">
+        <h2>Report a Civic Issue</h2>
+        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Location / Area">
+        <select>
+            <option>Select Issue Type</option>
+            <option>Pothole</option>
+            <option>Garbage Overflow</option>
+            <option>Water Leakage</option>
+            <option>Street Light Issue</option>
+            <option>Drainage Problem</option>
+        </select>
+        <textarea placeholder="Describe the issue"></textarea>
+        <button onclick="submitIssue()">Submit Issue</button>
+    </div>
+
+    <!-- STATUS -->
+    <div class="status-section">
+        <h2>Reported Issues Status</h2>
+        <table class="status-table">
+            <tr>
+                <th>Issue ID</th>
+                <th>Issue Type</th>
+                <th>Location</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Pothole</td>
+                <td>Main Road</td>
+                <td>In Progress</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Garbage</td>
+                <td>Market Area</td>
+                <td>Pending</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Street Light</td>
+                <td>Park Street</td>
+                <td>Resolved</td>
+            </tr>
+        </table>
+    </div>
+
+    <a href="landingpage.html" class="back-btn">⬅ Back to Dashboard</a>
+
+</div>
+
+<script>
+    function submitIssue() {
+        alert("Issue submitted successfully! Authorities will take action soon.");
+    }
+</script>
+
+</body>
+</html>
